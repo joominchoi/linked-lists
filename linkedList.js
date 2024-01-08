@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable no-console */
 import Node from './node.js';
 
 export default class LinkedList {
@@ -25,16 +27,6 @@ export default class LinkedList {
     this.listHead = newNode;
   }
 
-  size() {
-    let current = this.listHead;
-    let counter = 0;
-    while (current != null) {
-      counter++;
-      current = current.nextNode;
-    }
-    console.log(`List Size: ${counter}`);
-  }
-
   head() {
     if (this.listHead) {
       const firstNodeValue = this.listHead.value;
@@ -44,11 +36,25 @@ export default class LinkedList {
     }
   }
 
-  print() {
+  size() {
     let current = this.listHead;
-    while (current) {
-      console.log(current.value);
+    let counter = 0;
+    while (current != null) {
+      counter += 1;
       current = current.nextNode;
+    }
+    console.log(`List Size: ${counter}`);
+  }
+
+  print() {
+    if (this.listHead) {
+      let current = this.listHead;
+      while (current) {
+        console.log(current.value);
+        current = current.nextNode;
+      }
+    } else {
+      console.log('The linked list is empty.');
     }
   }
 }
