@@ -10,3 +10,4 @@ linkedList.prepend('zero');
 
 linkedList.print();
 linkedList.size();
+linkedList.head();

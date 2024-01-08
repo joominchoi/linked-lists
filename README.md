@@ -32,5 +32,8 @@ Extra Credit Tip: When you insert or remove a node, consider how it will affect 
 **Learnings:**
 - prepend
   - When you prepend a new value to the linked list, the new value becomes the new head of the list, and its 'nextNode' property is set to value of the previous head. So the existing elements are pushed down the list rather than getting overwritten, staying connected through the 'nextNode' references.
+- head
+  - Be wary of clashes with property names. I had a problem because I also had a property named 'head'.
+  - Although 'function' and 'method' are used interchangeably, it's quite common to use the term 'method' for functions within a class or an object.
 
 **Recapping:**
