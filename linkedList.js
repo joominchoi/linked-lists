@@ -36,6 +36,20 @@ export default class LinkedList {
     }
   }
 
+  tail() {
+    let current = this.listHead;
+
+    while (current && current.nextNode) {
+      current = current.nextNode;
+    }
+
+    if (current) {
+      console.log(`Last Node: ${current.value}`);
+    } else {
+      console.log('The linked list is empty.');
+    }
+  }
+
   size() {
     let current = this.listHead;
     let counter = 0;
