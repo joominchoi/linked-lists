@@ -25,3 +25,5 @@ linkedList.head();
 linkedList.tail();
 linkedList.at(-1);
 linkedList.contains(1);
+linkedList.print();
+linkedList.find('two');

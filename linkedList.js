@@ -89,6 +89,27 @@ export default class LinkedList {
     console.log(`Contains ${value}: ${containsValue}`);
   }
 
+  find(value) {
+    if (!this.listHead) {
+      console.log('The linked list is empty.');
+    }
+
+    let current = this.listHead;
+    let indexPosition = 0;
+    while (current !== null) {
+      if (current.value === value) {
+        console.log(`Index of ${value}: ${indexPosition}`);
+        break;
+      } else if (current.nextNode === null) {
+        console.log('The linked list does not contain this value.');
+        break;
+      } else {
+        current = current.nextNode;
+        indexPosition += 1;
+      }
+    }
+  }
+
   pop() {
     if (!this.listHead) {
       console.log('The linked list is empty.');
