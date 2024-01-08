@@ -1,4 +1,4 @@
-import Node from "./node.js";
+import Node from './node.js';
 
 export default class LinkedList {
   constructor() {
@@ -29,20 +29,20 @@ export default class LinkedList {
     let current = this.listHead;
     let counter = 0;
     while (current != null) {
-      counter++
-      current = current.nextNode
+      counter++;
+      current = current.nextNode;
     }
     console.log(`List Size: ${counter}`);
   }
 
   head() {
     if (this.listHead) {
-      let firstNodeValue = this.listHead.value;
+      const firstNodeValue = this.listHead.value;
       console.log(`First Node: ${firstNodeValue}`);
     } else {
       console.log('The linked list is empty.');
     }
-  }  
+  }
 
   print() {
     let current = this.listHead;
