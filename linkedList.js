@@ -71,6 +71,29 @@ export default class LinkedList {
     }
   }
 
+  pop() {
+    if (!this.listHead) {
+      console.log('The linked list is empty.');
+      return;
+    }
+
+    let current = this.listHead;
+    let previous = null;
+
+    while (current.nextNode) {
+      previous = current;
+      current = current.nextNode;
+    }
+
+    if (previous === null) {
+      this.listHead = null;
+    } else {
+      previous.nextNode = null;
+    }
+
+    console.log('Last node removed.');
+  }
+
   size() {
     let current = this.listHead;
     let counter = 0;

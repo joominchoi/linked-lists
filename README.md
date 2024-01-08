@@ -35,5 +35,7 @@ Extra Credit Tip: When you insert or remove a node, consider how it will affect 
 - head
   - Be wary of clashes with property names. I had a problem because I also had a property named 'head'.
   - Although 'function' and 'method' are used interchangeably, it's quite common to use the term 'method' for functions within a class or an object.
+- pop
+  - To remove the last node from a singly linked list, you need to traverse the list until you reach the second-to-last node and update its 'nextNode' pointer, rather than setting the actual last node as null.
 
 **Recapping:**
