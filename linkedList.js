@@ -50,6 +50,27 @@ export default class LinkedList {
     }
   }
 
+  at(index) {
+    if (index < 0) {
+      console.log('Index must be non-negative.');
+      return;
+    }
+
+    let current = this.listHead;
+    let currentIndex = 0;
+
+    while (current && currentIndex < index) {
+      current = current.nextNode;
+      currentIndex += 1;
+    }
+
+    if (current) {
+      console.log(`Value at index ${index}: ${current.value}`);
+    } else {
+      console.log(`Index ${index} is out of bounds.`);
+    }
+  }
+
   size() {
     let current = this.listHead;
     let counter = 0;
