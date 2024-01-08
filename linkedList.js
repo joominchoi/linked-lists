@@ -53,7 +53,6 @@ export default class LinkedList {
   at(index) {
     if (index < 0) {
       console.log('Index must be non-negative.');
-      return;
     }
 
     let current = this.listHead;
@@ -71,10 +70,28 @@ export default class LinkedList {
     }
   }
 
+  contains(value) {
+    if (!this.listHead) {
+      console.log('The linked list is empty.');
+    }
+
+    let containsValue = false;
+
+    let current = this.listHead;
+    while (current !== null) {
+      if (current.value === value) {
+        containsValue = true;
+        break;
+      }
+      current = current.nextNode;
+    }
+
+    console.log(`Contains ${value}: ${containsValue}`);
+  }
+
   pop() {
     if (!this.listHead) {
       console.log('The linked list is empty.');
-      return;
     }
 
     let current = this.listHead;

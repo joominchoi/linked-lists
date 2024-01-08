@@ -23,4 +23,5 @@ linkedList.pop();
 linkedList.size();
 linkedList.head();
 linkedList.tail();
-linkedList.at(4);
+linkedList.at(-1);
+linkedList.contains(1);
