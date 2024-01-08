@@ -149,24 +149,21 @@ export default class LinkedList {
   toString() {
     if (!this.listHead) {
       console.log('The linked list is empty.');
+      return;
     }
 
     let current = this.listHead;
     let output = '';
 
     while (current !== null) {
-      if (!this.isString(current.value)) {
-        let currentValueToString = String(current.value);
-        output += `(${currentValueToString}) -> `;
-      } else {
-        output += `(${current.value}) -> `;
-      }
-
+      const valueString = this.isString(current.value)
+        ? current.value
+        : String(current.value);
+      output += `(${valueString}) -> `;
       current = current.nextNode;
     }
 
-    output += 'null';
-    console.log(output);
+    console.log(`${output}null`);
   }
 
   print() {
