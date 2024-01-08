@@ -9,3 +9,4 @@ linkedList.append('four');
 linkedList.prepend('zero');
 
 linkedList.print();
+linkedList.size();

@@ -25,6 +25,16 @@ export default class LinkedList {
     this.head = newNode;
   }
 
+  size() {
+    let current = this.head;
+    let counter = 0;
+    while (current != null) {
+      counter++
+      current = current.nextNode
+    }
+    console.log(`List Size: ${counter}`);
+  }
+
   print() {
     let current = this.head;
     while (current) {
