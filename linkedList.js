@@ -142,6 +142,33 @@ export default class LinkedList {
     console.log(`List Size: ${counter}`);
   }
 
+  isString(value) {
+    return typeof value === 'string';
+  }
+
+  toString() {
+    if (!this.listHead) {
+      console.log('The linked list is empty.');
+    }
+
+    let current = this.listHead;
+    let output = '';
+
+    while (current !== null) {
+      if (!this.isString(current.value)) {
+        let currentValueToString = String(current.value);
+        output += `(${currentValueToString}) -> `;
+      } else {
+        output += `(${current.value}) -> `;
+      }
+
+      current = current.nextNode;
+    }
+
+    output += 'null';
+    console.log(output);
+  }
+
   print() {
     if (this.listHead) {
       let current = this.listHead;
