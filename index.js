@@ -30,3 +30,5 @@ linkedList.find('two');
 linkedList.toString();
 linkedList.insertAt(3, 0);
 linkedList.print();
+linkedList.removeAt(3);
+linkedList.print();

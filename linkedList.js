@@ -54,6 +54,41 @@ export default class LinkedList {
     }
   }
 
+  removeAt(index) {
+    if (index < 0) {
+      console.log('Index must be non-negative.');
+      return;
+    }
+
+    if (index === 0) {
+      if (this.listHead) {
+        this.listHead = this.listHead.nextNode;
+        console.log(`Node at index ${index} removed.`);
+      } else {
+        console.log('The linked list is empty.');
+      }
+      return;
+    }
+
+    let current = this.listHead;
+    let previous = null;
+    let currentIndex = 0;
+
+    while (current && currentIndex < index) {
+      previous = current;
+      current = current.nextNode;
+      currentIndex += 1;
+    }
+
+    if (current && currentIndex === index) {
+      // Remove in the middle or at the end
+      previous.nextNode = current.nextNode;
+      console.log(`Node at index ${index} removed.`);
+    } else {
+      console.log(`Index ${index} is out of bounds.`);
+    }
+  }
+
   prepend(value) {
     const newNode = new Node(value);
     newNode.nextNode = this.listHead;
