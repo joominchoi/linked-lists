@@ -21,6 +21,39 @@ export default class LinkedList {
     }
   }
 
+  insertAt(value, index) {
+    if (index < 0) {
+      console.log('Index must be non-negative.');
+    }
+
+    const newNode = new Node(value);
+
+    if (index === 0) {
+      newNode.nextNode = this.listHead;
+      this.listHead = newNode;
+      console.log(`${value} inserted at index ${index}`);
+      return;
+    }
+
+    let current = this.listHead;
+    let previous = null;
+    let currentIndex = 0;
+
+    while (current && currentIndex < index) {
+      previous = current;
+      current = current.nextNode;
+      currentIndex += 1;
+    }
+
+    if (currentIndex === index) {
+      newNode.nextNode = current;
+      previous.nextNode = newNode;
+      console.log(`${value} inserted at index ${index}`);
+    } else {
+      console.log(`Index ${index} is out of bounds.`);
+    }
+  }
+
   prepend(value) {
     const newNode = new Node(value);
     newNode.nextNode = this.listHead;

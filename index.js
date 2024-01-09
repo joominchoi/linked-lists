@@ -28,3 +28,5 @@ linkedList.contains(1);
 linkedList.print();
 linkedList.find('two');
 linkedList.toString();
+linkedList.insertAt(3, 0);
+linkedList.print();
